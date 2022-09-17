@@ -2,15 +2,17 @@ package com.hello.hellospring.service;
 
 import com.hello.hellospring.domain.Member;
 import com.hello.hellospring.reopsitory.MemberRepository;
-import com.hello.hellospring.reopsitory.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.OptionalInt;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
 
     /**
